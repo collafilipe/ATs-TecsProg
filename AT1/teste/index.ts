@@ -16,14 +16,15 @@ while (execution) {
     console.log(`1 - Cadastrar cliente`);
     console.log(`2 - Cadastrar dependente`);
     console.log(`3 - Listar clientes`);
-    console.log(`4 - Sair\n`);
+    console.log(`4 - Listar dependentes`);
+    console.log(`5 - Sair\n`);
 
     let entrada = new Entrada();
     let opcao = entrada.receberNumero("Digite a opção desejada");
 
     switch (opcao) {
         case 1:
-            console.log(`Cadastro de cliente:\n`);
+            console.log(`\nCadastro de cliente:\n`);
             let nome = entrada.receberTexto("Digite o nome do cliente");
             let nomeSocial = entrada.receberTexto("Digite o nome social do cliente");
             let dataNascimento = entrada.receberData("Digite a data de nascimento do cliente (DD-MM-YYYY)");
@@ -49,7 +50,7 @@ while (execution) {
                 console.log("\nNenhum cliente cadastrado. Cadastre um cliente antes de adicionar dependentes.\n");
                 execution = false;
                 break;
-            }
+            };
             console.log("\nSelecione o titular do dependente:\n");
             clientes.forEach((cliente, index) => {
                 console.log(`${index + 1} - ${cliente.nome}`);
@@ -60,7 +61,7 @@ while (execution) {
             if (titularIndex < 0 || titularIndex >= clientes.length) {
                 console.log("\nCliente inválido.\n");
                 break;
-            }
+            };
 
             let titular = clientes[titularIndex];
             
@@ -97,24 +98,46 @@ while (execution) {
                 console.log("Nenhum cliente cadastrado.\n");
                 execution = false;
                 break;
-            }
+            };
             clientes.forEach((cliente, index) => {
                 console.log(`${index + 1} - Nome: ${cliente.nome}`);
                 console.log(`    Nome Social: ${cliente.nomeSocial}`);
                 console.log(`    Data de Nascimento: ${cliente.dataNascimento.toLocaleDateString()}`);
                 console.log(`    Data de Cadastro: ${cliente.dataCadastro.toLocaleDateString()}`);
                 console.log(`    Endereço: ${cliente.endereco.rua}, ${cliente.endereco.bairro}, ${cliente.endereco.cidade}, ${cliente.endereco.estado}, ${cliente.endereco.pais}, ${cliente.endereco.codigoPostal}`);
-                console.log(`    Telefones: ${cliente.telefones.map(t => `${t.ddd} ${t.numero}`).join(", ")}`);
+                console.log(`    Telefones: ${cliente.telefones.map(t => `(${t.ddd}) ${t.numero}`).join(", ")}`);
                 console.log(`    Documentos: ${cliente.documentos.map(d => `${d.numero} (${d.tipo})`).join(", ")}`);
                 console.log(`    Dependentes: ${cliente.dependentes.map(d => d.nome).join(", ")}\n`);
             });
             break;
         case 4:
+            console.log(`\nLista de dependentes:\n`)
+            if (clientes.length === 0) {
+                console.log(`Nenhum dependete cadastrado.\n`)
+                execution = false;
+                break;
+            };
+            clientes.forEach((cliente) => {
+                if (cliente.dependentes != null) {
+                    cliente.dependentes.forEach((dependente, index) => {
+                        console.log(`${index + 1} - Nome: ${dependente.nome}`);
+                        console.log(`    Nome Social: ${dependente.nomeSocial}`);
+                        console.log(`    Data Nascimento: ${dependente.dataNascimento}`);
+                        console.log(`    Data Cadastramento: ${dependente.dataCadastro}`);
+                        console.log(`    Endereço: ${dependente.endereco.rua}, ${dependente.endereco.bairro}, ${dependente.endereco.cidade}, ${dependente.endereco.estado}, ${dependente.endereco.pais}, ${dependente.endereco.codigoPostal}`);
+                        console.log(`    Telefones: ${dependente.telefones.map(t => `(${t.ddd}) ${t.numero}`).join(`, `)}`);
+                        console.log(`    Documentos: ${dependente.documentos.map(d => `${d.numero} (${d.tipo})`).join(`, `)}`);
+                        console.log(`    Cliente: ${dependente.titular.nome}\n`)
+                    });
+                };
+            });
+            break;
+        case 5:
             console.log(`\nSaindo...\n`);
             execution = false;
             break;
         default:
             console.log(`\nOpção inválida!\n`);
             break;
-    }
-}
+    };
+};

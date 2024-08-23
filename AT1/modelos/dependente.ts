@@ -26,7 +26,7 @@ export default class Dependente {
         this.dataNascimento = dataNascimento;
         this.dataCadastro = dataCadastro;
         this.telefones = telefones;
-        this.endereco = titular.endereco;
+        this.endereco = titular.endereco.clonar() as Endereco;
         this.titular = titular;
     }
 }
