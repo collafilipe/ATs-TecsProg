@@ -111,7 +111,7 @@ while (execution) {
             });
             break;
         case 4:
-            console.log(`\nLista de dependentes:\n`)
+            console.log(`\nLista de dependentes:\n`);
             if (clientes.length === 0) {
                 console.log(`Nenhum dependete cadastrado.\n`)
                 execution = false;
