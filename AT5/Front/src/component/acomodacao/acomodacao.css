@@ -1,0 +1,880 @@
+/* Estilos gerais para o navbar */
+nav {
+    background-color: #004d99;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo do título (Atlantis) */
+  nav h2 {
+    color: #fff;
+    font-size: 24px;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .save.button {
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .save.button:hover {
+    background-color: #0056b3;
+  }
+  
+  .cancel.button {
+    background-color: #ccc;
+    color: black;
+  }
+  
+  .cancel.button:hover {
+    background-color: #999;
+  }
+  
+  /* Estilos gerais para a lista de links */
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin-left: 20px;
+  }
+  
+  /* Estilos para os links */
+  nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    transition: color 0.3s;
+  }
+  
+  /* Estilo quando o link é ativo */
+  nav ul li a.active {
+    border-bottom: 2px solid #ffcc00;
+  }
+  
+  /* Estilo ao passar o mouse sobre o link */
+  nav ul li a:hover {
+    color: #ffcc00;
+  }
+  
+  /* Estilo responsivo para telas menores */
+  @media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+  
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+  
+    nav ul li {
+        margin: 10px 0;
+    }
+  }
+  
+  /* Estilo para o botão de editar (ícone de lápis) */
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #007bff;
+    transition: color 0.3s;
+  }
+  
+  button:hover {
+    color: #0056b3;
+  }
+  
+  /* Estilos gerais para o modal */
+  .Modal__Overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .Modal__Content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* Estilos para o formulário */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  input[type="text"], input[type="number"], input[type="checkbox"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type="checkbox"] {
+    width: auto;
+  }
+  
+  button {
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }
+  
+  /* Estilo para manter a responsividade */
+  @media (max-width: 768px) {
+    .Modal__Content {
+        width: 90%;
+        height: auto;
+    }
+  }
+  
+  /* Estilo geral para o container */
+  div {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  /* Estilo para os parágrafos com informações da acomodação */
+  p {
+    margin: 8px 0;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+  
+  /* Estilo para o botão de excluir (ícone de X) */
+  button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #dc3545;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  button:hover {
+    color: #c82333;
+  }
+  
+  /* Estilo do componente modal (AcomodacaoEditar) */
+  .Modal__Overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .Modal__Content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsividade para telas menores */
+  @media (max-width: 768px) {
+    div {
+        padding: 10px;
+    }
+  
+    button {
+        font-size: 18px;
+    }
+  }
+  
+  /* Estilo geral para o container do formulário */
+  .form-cadastro {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Estilo para o título */
+  h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para os campos de input */
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Estilo para o seletor de acomodação */
+  .cliente-select select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para a área de seleção de seções */
+  .seletor-secao {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .seletor-secao div {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #e0e0e0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .seletor-secao div:hover {
+    background-color: #d0d0d0;
+  }
+  
+  /* Estilo para a seção ativa */
+  .secao-ativa {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  /* Estilo para o botão de cadastrar */
+  .button.save {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  /* Estilo do botão ao passar o mouse */
+  .button.save:hover {
+    background-color: #218838;
+  }
+  
+  /* Responsividade para telas menores */
+  @media (max-width: 768px) {
+    .form-cadastro {
+        padding: 15px;
+    }
+  
+    h2 {
+        font-size: 20px;
+    }
+  }
+  
+  /* Container principal da acomodação */
+  .item-container {
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo para o conteúdo interno */
+  .item-sub {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  /* Estilo individual dos itens */
+  .item {
+    flex-grow: 1;
+    margin-right: 20px;
+  }
+  
+  /* Flex container para organizar detalhes da acomodação */
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo para o tipo de acomodação */
+  .tipo {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  /* Estilo das ações (botões de editar e deletar) */
+  .acoes {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Estilo do ícone de deletar (BsXLg) */
+  .icone {
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 15px;
+    transition: transform 0.3s;
+  }
+  
+  /* Efeito hover no ícone de deletar */
+  .icone:hover {
+    transform: scale(1.2);
+    color: #ff0000;
+  }
+  
+  /* Responsividade para telas menores */
+  @media (max-width: 768px) {
+    .item-sub {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+  
+    .item {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+  
+    .acoes {
+        margin-top: 10px;
+    }
+  }
+  
+  /* Container principal da lista de acomodações */
+  .list {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo para o título */
+  .list h2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Container da lista de itens */
+  .list-itens {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Estilo para cada item da lista de acomodações */
+  .list-itens .item-container {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s;
+  }
+  
+  /* Estilo hover para destacar o item */
+  .list-itens .item-container:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Responsividade para telas menores */
+  @media (max-width: 768px) {
+    .list {
+        padding: 15px;
+    }
+  }
+  
+  /* Container principal de cada item do cliente */
+  .item-container {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  /* Estilo para destacar o container ao passar o mouse */
+  .item-container:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Sub-container de cada item */
+  .item-sub {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Flex container para organização dos itens */
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Estilo dos detalhes do cliente */
+  .detalhes {
+    margin-top: 20px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  /* Estilo para cada item de detalhe */
+  .detalhes-item {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  /* Título das seções de detalhes */
+  .detalhes h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Ações (editar e deletar) */
+  .acoes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Ícone de deletar */
+  .icone {
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .icone:hover {
+    color: darkred;
+  }
+  
+  /* Efeito de pointer quando o item for clicável */
+  .pointer {
+    cursor: pointer;
+  }
+  
+  /* Responsividade para garantir boa visualização em telas menores */
+  @media (max-width: 768px) {
+    .item-container {
+        padding: 10px;
+    }
+  
+    .detalhes {
+        padding: 8px;
+    }
+  
+    .detalhes h3 {
+        font-size: 16px;
+    }
+  
+    .detalhes-item {
+        font-size: 13px;
+    }
+  }
+  
+  /* Estilo do ícone de edição */
+  .edit.icone {
+    cursor: pointer;
+    transition: color 0.3s ease;
+    color: #007bff;
+  }
+  
+  .edit.icone:hover {
+    color: #0056b3;
+  }
+  
+  /* Estilos gerais do modal */
+  .modal-container {
+    padding: 20px;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+  
+  .modal-header h1 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .pointer {
+    cursor: pointer;
+    color: #007bff;
+  }
+  
+  .pointer:hover {
+    color: #0056b3;
+  }
+  
+  /* Corpo do modal */
+  .modal-body {
+    margin-top: 20px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
+  /* Seletor de seções */
+  .seletor-secao {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .secao-ativa {
+    font-weight: bold;
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+  }
+  
+  .seletor-secao div {
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .seletor-secao div:hover {
+    color: #0056b3;
+  }
+  
+  /* Botões do rodapé do modal */
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+  }
+  
+  .button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .save.button {
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .save.button:hover {
+    background-color: #0056b3;
+  }
+  
+  .cancel.button {
+    background-color: #ccc;
+    color: black;
+  }
+  
+  .cancel.button:hover {
+    background-color: #999;
+  }
+  
+  /* Estilos dos itens de entrada (inputs) */
+  .input-item {
+    margin-bottom: 15px;
+  }
+  
+  .input-item label {
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* Ajuste responsivo */
+  @media (max-width: 768px) {
+    .modal-container {
+        padding: 15px;
+    }
+  
+    .modal-header h1 {
+        font-size: 20px;
+    }
+  
+    .form-control {
+        font-size: 12px;
+    }
+  
+    .modal-footer .button {
+        padding: 6px 12px;
+    }
+  }
+  
+  /* app.css */
+  
+  /* Estilos globais */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f8;
+    color: #333;
+  }
+  
+  /* Container do formulário */
+  .form-cadastro {
+    width: 60%;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Título do formulário */
+  .form-cadastro h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+    color: #007bff;
+  }
+  
+  /* Input group e labels */
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5em;
+  }
+  
+  .input-group input {
+    padding: 0.5em;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .input-group input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+  }
+  
+  /* Seletor de seções */
+  .seletor-secao {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5em;
+  }
+  
+  .seletor-secao div {
+    padding: 0.5em 1em;
+    background-color: #e9ecef;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .seletor-secao .secao-ativa {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Select de tipo de cliente */
+  .cliente-select {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5em;
+  }
+  
+  .cliente-select select {
+    padding: 0.5em;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  /* Botão de cadastrar */
+  .button.save {
+    display: block;
+    width: 100%;
+    padding: 0.75em;
+    background-color: #28a745;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .button.save:hover {
+    background-color: #218838;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .form-cadastro {
+      width: 90%;
+    }
+  
+    .seletor-secao {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .seletor-secao div {
+      margin-bottom: 0.5em;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  /* CSS para o componente ClientesList */
+  
+  .list {
+    padding: 2em;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 1em auto;
+    max-width: 800px;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 1em;
+  }
+  
+  .list-itens {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  
+  .list-itens .cliente {
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  
+  .list-itens .cliente .cliente-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .list-itens .cliente .cliente-header h3 {
+    font-size: 1.2em;
+    margin: 0;
+    color: #333;
+  }
+  
+  .list-itens .cliente .cliente-header .buttons {
+    display: flex;
+    gap: 0.5em;
+  }
+  
+  .list-itens .cliente .cliente-header .buttons button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+  }
+  
+  .list-itens .cliente .cliente-header .buttons button:hover {
+    background-color: #0056b3;
+  }
+  
+  .list-itens .cliente .cliente-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  
+  .list-itens .cliente .cliente-content p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9em;
+  }
+  
